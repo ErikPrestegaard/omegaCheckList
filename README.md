@@ -1,9 +1,3 @@
-omegaCheckList
-Introduction
-
-Simple django checklist app
-
-
 Run instructions:
 
 • Requirements: Pillow, Django
