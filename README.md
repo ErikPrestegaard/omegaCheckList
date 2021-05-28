@@ -3,6 +3,8 @@ django checklist app
 
 Keep in mind private key is included
 
+
+
 Run instructions: 
 
   Requirements: Pillow, Django
