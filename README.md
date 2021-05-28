@@ -3,7 +3,6 @@ Introduction
 
 Simple django checklist app
 
-Installation
 
 Run instructions:
 
