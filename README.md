@@ -4,6 +4,6 @@ Run instructions:
 
 • Developed on python version 3.8.5
 
-• Navigate into checklist
+• Navigate into the main directory
 
-• Run: "python manage.py startserver"
+• Run: "python .\manage.py runserver"
