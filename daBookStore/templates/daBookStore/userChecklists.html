@@ -1,0 +1,19 @@
+
+{% extends "daBookStore/base.html" %}
+
+{% block content %}
+
+    {% for test in object %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ checkList.createdDate.profile.image.url }}">
+          <div class="media-body">
+            <div class="checklistMetadata">
+              <small class="text-muted">{{ test.createdDate|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="checklistTitle">{{ test.title }}</a></h2>
+            <p class="checklistContent">{{ test.description }}</p>
+          </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,43 @@
+
+{% extends "daBookStore/base.html" %}
+
+{% block content %}
+
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="checklistMetadata">
+                <a class="mr-2">{{ checkList.createdBy }}</a>
+                <small class="text-muted">{{ checkList.createdDate|date:"F d, Y" }}</small>
+                {% if checkList.createdBy == user %}
+                    <a class="mr-2" href="{% url 'checklistUpdate' checkList.id%}">Edit</a>
+                    <a class="mr-2" href="{% url 'checklistDelete' checkList.id%}">Delete</a>
+                {% endif %}
+            </div>
+            <h2><a class="checklistTitle">{{ checkList.title }}</a></h2>
+            <p class="checklistContent">{{ checkList.description }}</p>
+            
+            <!-- Adds the checklist -->
+            <ul class="list-group">
+                {% for item in items %}
+                    <li class="list-group-item">
+                        <form method="POST" action="{% url 'checklistDetail' checkList.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="checklistValue" value="{{ item.id }}">
+                            <input type="submit" class = {% if item.isChecked %}"btn btn-light"{% else %}"btn btn-outline-dark"{% endif %} value="{{ item.item }}">
+                        </form>
+                    </li>
+                {% endfor %}
+                
+                <li class="list-group-item">
+                    <form method="POST" action="{% url 'checklistDetail' checkList.id %}">
+                        {% csrf_token %}
+                        <input type="submit"  id = "green" value="Add item">
+                        <input type="text" name="newItem"><br>
+                    </form> 
+                </li>
+            </ul>
+
+        </div>
+    </article>
+
+{% endblock content %}

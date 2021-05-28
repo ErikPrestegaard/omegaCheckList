@@ -1,0 +1,19 @@
+
+{% extends "daBookStore/base.html" %}
+
+{% block content %}
+    {% for checkList in checkLists %}
+        <article class="media content-section">
+            <img class="rounded-circle checklistImg" src="{{ checkList.createdBy.profile.image.url }}">
+            <div class="media-body">
+                <div class="checklistMetadata">
+                    <a class="text-muted" href="{% url 'userLists' checkList.createdBy.username %}"> {{ checkList.createdBy }}</a>
+                    <small class="text-muted">{{ checkList.createdDate|date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="checklistTitle" href="{% url 'checklistDetail' checkList.id %}">{{ checkList.title }}</a></h2>
+                <p class="checklistContent">{{ checkList.description }}</p>
+            </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}
