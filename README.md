@@ -5,10 +5,10 @@ Keep in mind private key is included
 
 Run instructions: 
 
-Requirements: Pillow, Django
+  Requirements: Pillow, Django
 
-Developed on python version 3.8.5
+  Developed on python version 3.8.5
 
-Navigate into checklist 
+  Navigate into checklist 
 
-Run: "python manage.py startserver"
+  Run: "python manage.py startserver"
